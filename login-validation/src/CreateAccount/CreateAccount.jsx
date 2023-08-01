@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../CreateAccount/CreateAccount.css';
 import CurrentDate from '../DateandTime/CurrentDate';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
@@ -10,6 +11,7 @@ function CreateAccount() {
     const [email, setemail] = useState('');
     const [password, setpassword] = useState('');
     const [passwordvisibility, setpasswordvisibility] = useState(false);
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         console.log('formSubmitted');
@@ -74,13 +76,14 @@ function CreateAccount() {
                         <form onSubmit={handleSubmit}>
                             <div className="form-group">
                                 <button type='submit'>Create Account</button>
+
                             </div>
 
                         </form>
 
                         <form onSubmit={handleSubmit}>
                             <div className="links">
-                                <a href='#123'>Already have an account?</a>
+                                <Link to='/Login-page' className='animated-link'>Already Have an account</Link>
                                 <a href='#123'>Forgot Account?</a>
                             </div>
 
